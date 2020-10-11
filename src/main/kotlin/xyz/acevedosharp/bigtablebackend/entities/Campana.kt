@@ -25,8 +25,8 @@ class Campana(
         // -------- Not reflected in the erd --------
 
         @OneToMany(mappedBy = "campana", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var asignacionesClusterCampanaRel: List<AsignacionClusterCampanaRel>,
+        var asignacionesClusterCampanaRel: List<AsignacionClusterCampanaRel>?,
 
         @OneToMany(mappedBy = "campana", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var usuariosCampanaRel: List<UsuarioCampanaRel>
+        var usuariosCampanaRel: List<UsuarioCampanaRel>?
 )

@@ -43,5 +43,5 @@ class Usuario(
         // -------- Not reflected in the erd --------
 
         @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var usuariosCampanaRel: List<UsuarioCampanaRel>
+        var usuariosCampanaRel: List<UsuarioCampanaRel>?
 )

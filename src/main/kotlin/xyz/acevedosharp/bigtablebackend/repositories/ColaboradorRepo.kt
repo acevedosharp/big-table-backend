@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository
 import xyz.acevedosharp.bigtablebackend.entities.Colaborador
 
 @Repository
-interface ColaboradorRepo: JpaRepository<Colaborador, Int>
+interface ColaboradorRepo: JpaRepository<Colaborador, Int> {
+    fun findByCedulaEquals(cedula: String): Colaborador?
+}

@@ -49,5 +49,5 @@ class Colaborador(
         // -------- Not reflected in the erd --------
 
         @OneToMany(mappedBy = "colaborador", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var clusters: List<Cluster>
+        var clusters: List<Cluster>?
 )

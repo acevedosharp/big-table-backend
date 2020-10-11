@@ -5,4 +5,6 @@ import org.springframework.stereotype.Repository
 import xyz.acevedosharp.bigtablebackend.entities.Usuario
 
 @Repository
-interface UsuarioRepo: JpaRepository<Usuario, Int>
+interface UsuarioRepo: JpaRepository<Usuario, Int> {
+    fun findByCedulaEquals(cedula: String): Usuario?
+}

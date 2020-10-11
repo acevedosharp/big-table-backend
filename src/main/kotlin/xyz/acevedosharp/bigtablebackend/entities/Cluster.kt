@@ -28,8 +28,8 @@ class Cluster(
         // -------- Not reflected in the erd --------
 
         @OneToMany(mappedBy = "cluster", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var asignacionesClusterCampanaRel: List<AsignacionClusterCampanaRel>,
+        var asignacionesClusterCampanaRel: List<AsignacionClusterCampanaRel>?,
 
         @OneToMany(mappedBy = "cluster", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var clustersColaboradorRel: List<ClusterColaboradorRel>
+        var clustersColaboradorRel: List<ClusterColaboradorRel>?
 )
