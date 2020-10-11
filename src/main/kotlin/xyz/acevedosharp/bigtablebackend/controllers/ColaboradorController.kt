@@ -22,7 +22,7 @@ class ColaboradorController(
     @GetMapping("/colaboradores")
     fun allColaboradores() = colaboradorRepo.findAll()
 
-    @PostMapping("/colaboradores")
+    @GetMapping("/colaboradores/new")
     fun newColaborador(
             @RequestParam("cedula") cedula: String,
             @RequestParam("nombre_negocio") nombreNegocio: String,
