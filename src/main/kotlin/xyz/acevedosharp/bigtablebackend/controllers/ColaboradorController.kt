@@ -57,6 +57,41 @@ class ColaboradorController(
         }
     }
 
+    @GetMapping("/colaboradores/new")
+    fun newColaborador(
+            @RequestParam("cedula") cedula: String,
+            @RequestParam("nombre_negocio") nombreNegocio: String,
+            @RequestParam("nombre") nombre: String,
+            @RequestParam("apellido") apellido: String,
+            @RequestParam("direccion") direccion: String,
+            @RequestParam("telefono") telefono: String,
+            @RequestParam("latitud") latitud: Double,
+            @RequestParam("longitud") longitud: Double,
+            @RequestParam("nivel") nivel: Int
+    ) {
+        try {
+            colaboradorRepo.save(
+                    Colaborador(
+                            null,
+                            cedula,
+                            nombreNegocio,
+                            nombre,
+                            apellido,
+                            direccion,
+                            telefono,
+                            latitud,
+                            longitud,
+                            Timestamp.from(Instant.now()),
+                            nivel,
+                            0,
+                            0
+                    )
+            )
+        } catch (e: Exception) {
+            throw GenericFailedSaveException()
+        }
+    }
+
     @GetMapping("/colaboradores/wipe")
     fun wipeColaboradores() = colaboradorRepo.deleteAll()
 }
