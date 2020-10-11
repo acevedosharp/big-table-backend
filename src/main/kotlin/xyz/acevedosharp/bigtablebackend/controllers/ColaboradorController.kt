@@ -23,7 +23,7 @@ class ColaboradorController(
     fun allColaboradores() = colaboradorRepo.findAll()
 
     @PostMapping("/colaboradores/new")
-    fun newColaborador(
+    fun newColaboradorPost(
             @RequestParam("cedula") cedula: String,
             @RequestParam("nombre_negocio") nombreNegocio: String,
             @RequestParam("nombre") nombre: String,
@@ -58,7 +58,7 @@ class ColaboradorController(
     }
 
     @GetMapping("/colaboradores/new")
-    fun newColaborador(
+    fun newColaboradorGet(
             @RequestParam("cedula") cedula: String,
             @RequestParam("nombre_negocio") nombreNegocio: String,
             @RequestParam("nombre") nombre: String,

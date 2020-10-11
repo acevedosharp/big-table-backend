@@ -20,7 +20,7 @@ class UsuarioController(
     fun allUsuarios() = usuarioRepo.findAll()
 
     @PostMapping("/usuarios/new")
-    fun newUser(
+    fun newUserPost(
             @RequestParam("cedula") cedula: String,
             @RequestParam("nombre") nombre: String,
             @RequestParam("apellido") apellido: String,
@@ -51,7 +51,7 @@ class UsuarioController(
         }
     }
 
-    @GetMapping("/usuarios/new")
+    @GetMappingGet("/usuarios/new")
     fun newUser(
             @RequestParam("cedula") cedula: String,
             @RequestParam("nombre") nombre: String,
