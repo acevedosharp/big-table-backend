@@ -16,6 +16,9 @@ class UsuarioController(
     @GetMapping("/usuarios/{cedula}")
     fun userByCedula(@PathVariable cedula: String) = usuarioRepo.findByCedulaEquals(cedula) ?: throw UsuarioNotFoundException(cedula)
 
+    @GetMapping("/usuarios")
+    fun allUsuarios() = usuarioRepo.findAll()
+
     @PostMapping("/usuarios")
     fun newUser(
             @RequestParam("cedula") cedula: String,
@@ -40,7 +43,6 @@ class UsuarioController(
                             latitud,
                             longitud,
                             sisben,
-                            null,
                             null
                     )
             )
@@ -48,4 +50,7 @@ class UsuarioController(
             throw GenericFailedSaveException()
         }
     }
+
+    @GetMapping("/usuarios/wipe")
+    fun wipeUsuarios() = usuarioRepo.deleteAll()
 }

@@ -19,6 +19,9 @@ class ColaboradorController(
     @GetMapping("/colaboradores/{cedula}")
     fun colaboradorByCedula(@PathVariable cedula: String) = colaboradorRepo.findByCedulaEquals(cedula) ?: throw ColaboradorNotFoundException(cedula)
 
+    @GetMapping("/colaboradores")
+    fun allColaboradores() = colaboradorRepo.findAll()
+
     @PostMapping("/colaboradores")
     fun newColaborador(
             @RequestParam("cedula") cedula: String,
@@ -46,12 +49,14 @@ class ColaboradorController(
                             Timestamp.from(Instant.now()),
                             nivel,
                             0,
-                            0,
-                            null
+                            0
                     )
             )
         } catch (e: Exception) {
             throw GenericFailedSaveException()
         }
     }
+
+    @GetMapping("/colaboradores/wipe")
+    fun wipeColaboradores() = colaboradorRepo.deleteAll()
 }

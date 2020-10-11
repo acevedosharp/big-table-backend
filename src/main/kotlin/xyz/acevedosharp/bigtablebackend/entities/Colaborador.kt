@@ -4,13 +4,13 @@ import java.sql.Timestamp
 import javax.persistence.*
 
 @Entity
-@Table(name = "campana", schema = "meson")
+@Table(name = "colaborador", schema = "meson")
 class Colaborador(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
         val id: Int?,
 
-        @Column(name = "cedula")
+        @Column(name = "cedula", unique = true)
         val cedula: String,
 
         @Column(name = "nombre_negocio")
@@ -44,10 +44,5 @@ class Colaborador(
         val campanasColaboradas: Int,
 
         @Column(name = "valor_colaborado")
-        val valorColaborado: Int,
-
-        // -------- Not reflected in the erd --------
-
-        @OneToMany(mappedBy = "colaborador", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var clusters: List<Cluster>?
+        val valorColaborado: Int
 )

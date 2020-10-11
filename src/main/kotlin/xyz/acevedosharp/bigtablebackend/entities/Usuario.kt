@@ -10,7 +10,7 @@ class Usuario(
         @Column(name = "id")
         val id: Int?,
 
-        @Column(name = "cedula")
+        @Column(name = "cedula", unique = true)
         val cedula: String,
 
         @Column(name = "nombre")
@@ -38,10 +38,5 @@ class Usuario(
         val sisben: Double,
 
         @ManyToOne @JoinColumn(name = "cluster")
-        val cluster: Cluster?,
-
-        // -------- Not reflected in the erd --------
-
-        @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var usuariosCampanaRel: List<UsuarioCampanaRel>?
+        val cluster: Cluster?
 )

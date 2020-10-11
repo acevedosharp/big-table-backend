@@ -23,13 +23,5 @@ class Cluster(
         val campanasParticipadas: Int,
 
         @Column(name = "fecha_ultima_campana")
-        val fechaUltimaCampana: Timestamp,
-
-        // -------- Not reflected in the erd --------
-
-        @OneToMany(mappedBy = "cluster", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var asignacionesClusterCampanaRel: List<AsignacionClusterCampanaRel>?,
-
-        @OneToMany(mappedBy = "cluster", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var clustersColaboradorRel: List<ClusterColaboradorRel>?
+        val fechaUltimaCampana: Timestamp
 )

@@ -20,13 +20,5 @@ class Campana(
         val fechaInicio: Timestamp,
 
         @Column(name = "activo")
-        val activo: Boolean,
-
-        // -------- Not reflected in the erd --------
-
-        @OneToMany(mappedBy = "campana", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var asignacionesClusterCampanaRel: List<AsignacionClusterCampanaRel>?,
-
-        @OneToMany(mappedBy = "campana", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-        var usuariosCampanaRel: List<UsuarioCampanaRel>?
+        val activo: Boolean
 )
