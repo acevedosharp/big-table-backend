@@ -51,8 +51,8 @@ class UsuarioController(
         }
     }
 
-    @GetMappingGet("/usuarios/new")
-    fun newUser(
+    @GetMapping("/usuarios/new")
+    fun newUserGet(
             @RequestParam("cedula") cedula: String,
             @RequestParam("nombre") nombre: String,
             @RequestParam("apellido") apellido: String,
