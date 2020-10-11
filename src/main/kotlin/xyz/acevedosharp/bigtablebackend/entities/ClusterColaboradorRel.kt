@@ -3,7 +3,7 @@ package xyz.acevedosharp.bigtablebackend.entities
 import javax.persistence.*
 
 @Entity
-@Table(name = "cluster_colaborador_rel", schema = "meson")
+@Table(name = "cluster_colaborador_rel", schema = "cjbijqp1eiscr4cu")
 class ClusterColaboradorRel(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")

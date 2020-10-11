@@ -3,7 +3,7 @@ package xyz.acevedosharp.bigtablebackend.entities
 import javax.persistence.*
 
 @Entity
-@Table(name = "usuario_campana_rel", schema = "meson")
+@Table(name = "usuario_campana_rel", schema = "cjbijqp1eiscr4cu")
 class UsuarioCampanaRel(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
